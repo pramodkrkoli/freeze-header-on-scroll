@@ -169,5 +169,24 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            var hdHeight = $('header').height(); //Variable defines to get Header Height
+            var navHeight = $('#mainNavigation').height(); //Variable defines to get Main Header Height
+            var scrollVal = $(this).scrollTop(); //Variable defines to get value of page scrolling
+
+            if(scrollVal >= hdHeight){
+                $('#mainNavigation').addClass('freezeHeader');
+                $('body').css({'padding-top': navHeight + 'px'});
+            }else{
+                $('#mainNavigation').removeClass('freezeHeader');
+                $('body').css({'padding-top': '0px'});
+            }
+
+        });
+    })
+</script>
 </body>
 </html>
